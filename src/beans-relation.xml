@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.atguigu.autowaire.Address" p:city="jinan" p:street="zhengtong street"></bean>
+    <!--<bean id="address2" class="com.atguigu.autowaire.Address" p:city="qingdao" p:street="binhai street"></bean>-->
+    <bean id="address2" class="com.atguigu.autowaire.Address" p:street="binhai street" parent="address"></bean>
+
+</beans>

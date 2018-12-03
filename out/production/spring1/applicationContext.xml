@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="helloWorld" class="com.atguigu.HelloWorld">
+        <property name="name" value="zhubing"></property>
+    </bean>
+
+    <bean id="car" class="com.atguigu.Car">
+        <constructor-arg name="brand" value="audi"></constructor-arg>
+        <constructor-arg name="corp" value="shanghai"></constructor-arg>
+        <constructor-arg name="price" value="300000"></constructor-arg>
+    </bean>
+
+    <bean id="car2" class="com.atguigu.Car">
+        <property name="brand" value="Fort"/>
+        <property name="corp" value="changan"/>
+        <property name="price" value="200000"/>
+    </bean>
+
+    <bean id="person" class="com.atguigu.Person">
+        <property name="name" value="zhubing"/>
+        <property name="age" value="29"/>
+        <property name="car" ref="car"/>
+    </bean>
+
+    <!--
+        测试配置集合属性的注入
+    -->
+    <bean id="person3" class="com.atguigu.collection.Person">
+        <property name="name" value="Mike"></property>
+        <property name="age" value="30"></property>
+        <property name="cars">
+            <list>
+                <ref bean="car"/>
+                <ref bean="car2"/>
+            </list>
+        </property>
+    </bean>
+
+    <!--
+        配置 Map 属性值
+    -->
+    <bean id="newPerson" class="com.atguigu.NewPerson">
+        <property name="name" value="Rose"/>
+        <property name="age" value="120"/>
+        <property name="cars">
+            <map>
+                <entry key="AA" value-ref="car"></entry>
+                <entry key="BB" value-ref="car2"></entry>
+            </map>
+        </property>
+    </bean>
+
+    <!--
+        配置Properties属性值
+    -->
+    <bean id="dataSource" class="com.atguigu.collection.DataSource">
+        <property name="properties">
+            <props>
+                <prop key="user">root</prop>
+                <prop key="password">1234</prop>
+                <prop key="jdbcUrl">jdbc:mysql:///test</prop>
+            </props>
+        </property>
+    </bean>
+
+    <util:list id="cars">
+        <ref bean="car"/>
+        <ref bean="car2"/>
+    </util:list>
+
+    <bean id="person4" class="com.atguigu.collection.Person">
+        <property name="name" value="Jack"/>
+        <property name="age" value="18"/>
+        <property name="cars" ref="cars"/>
+    </bean>
+
+    <bean id="person5" class="com.atguigu.collection.Person" p:age="30"
+          p:name="Queen" p:cars-ref="cars"/>
+</beans>
