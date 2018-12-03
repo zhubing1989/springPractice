@@ -23,5 +23,6 @@ public class Main {
 
         NewPerson newPerson=(NewPerson) context.getBean("newPerson");
         System.out.println(newPerson);
+
     }
 }

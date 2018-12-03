@@ -12,6 +12,12 @@
         <fileset id="fileset3" name="Beans Relation" removed="false">
           <file>file://$MODULE_DIR$/src/beans-relation.xml</file>
         </fileset>
+        <fileset id="fileset4" name="Beans Properties" removed="false">
+          <file>file://$MODULE_DIR$/src/beans-properties.xml</file>
+        </fileset>
+        <fileset id="fileset5" name="Beans Cycle" removed="false">
+          <file>file://$MODULE_DIR$/src/beans-cycle.xml</file>
+        </fileset>
       </configuration>
     </facet>
   </component>
