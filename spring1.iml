@@ -18,6 +18,12 @@
         <fileset id="fileset5" name="Beans Cycle" removed="false">
           <file>file://$MODULE_DIR$/src/beans-cycle.xml</file>
         </fileset>
+        <fileset id="fileset6" name="Beans_annotation" removed="false">
+          <file>file://$MODULE_DIR$/src/beans_annotation.xml</file>
+        </fileset>
+        <fileset id="fileset7" name="Beans Annotation" removed="false">
+          <file>file://$MODULE_DIR$/src/beans-annotation.xml</file>
+        </fileset>
       </configuration>
     </facet>
   </component>
